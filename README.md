@@ -1,0 +1,1 @@
+# footy-assistant-authorised-gateway
