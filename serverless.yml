@@ -7,7 +7,7 @@ provider:
   region: eu-west-2
 
 functions:
-  authorised-password-change:
+  password-change:
     handler: handler.post
     events:
       - http:
