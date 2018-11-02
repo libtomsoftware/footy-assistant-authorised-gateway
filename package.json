@@ -1,0 +1,36 @@
+{
+  "name": "footy-assistant-authorised-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint '**/*.js'",
+    "start": "node index",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libtomsoftware/footy-assistant-authorised-gateway.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libtomsoftware/footy-assistant-authorised-gateway/issues"
+  },
+  "homepage": "https://github.com/libtomsoftware/footy-assistant-authorised-gateway#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "dot-env": "0.0.1",
+    "eslint": "^5.6.0",
+    "express": "^4.16.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "emailjs": "^2.2.0",
+    "fs-extra": "^7.0.0",
+    "js-base64": "^2.4.9",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.6"
+  }
+}

@@ -1,0 +1,22 @@
+# docs.serverless.com
+service: footy-assistant-authorised-gateway
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-2
+
+functions:
+  authorised-password-change:
+    handler: handler.post
+    events:
+      - http:
+          path: gateway/{resource}/{club}/{id}
+          method: post
+          cors: true
+          request:
+            parameters:
+              paths:
+                resource: true
+                club: true
+                id: true
