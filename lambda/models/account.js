@@ -37,7 +37,6 @@ module.exports = class AccountModel {
         this.firstname = data.firstname;
         this.lastname = data.lastname;
         this.dob = data.dob;
-        this.role = data.role;
         this.privileges = privileges;
         this.phone = data.phone;
         this.email = data.email.toLowerCase();
@@ -47,6 +46,9 @@ module.exports = class AccountModel {
         this.lastSuccessfulLogin = data.lastSuccessfulLogin || null;
         this.salt = salt;
         this.registrationTime = registrationTime;
+        this.membership = data.membership || {
+            active: false
+        };
 
         this.loginAttempts = data.loginAttempts || {
             successful: 'unknown',

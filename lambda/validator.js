@@ -1,7 +1,7 @@
 'use strict';
 
 const REGEX = {
-    ALPHABETIC_ONLY: /^\D+/g,
+    ALPHABETIC_ONLY: /^[a-zA-Z]+$/i,
     ALPHANUMERIC_ONLY: /^[a-z0-9]+$/i,
     ANY_NUMBERS: /\d/,
     NUMBERS_ONLY: /^\d+$/,
@@ -23,8 +23,8 @@ module.exports = new class Validator {
         return string && string.length >= minChars;
     }
 
-    isAlphabeticOnly( string ) {
-        return REGEX.ALPHABETIC_ONLY.test( string );
+    isAlphabeticOnly( text ) {
+        return REGEX.ALPHABETIC_ONLY.test( text );
     }
 
     isAlphaNumericOnly( string ) {

@@ -1,7 +1,6 @@
-const helpers = require( './helpers');
-
 module.exports = {
-    APP_SALT: helpers.generateRandomString( 5, true ),
+    CRYPTO_KEY: process.env.CRYPTO_KEY,
+    CRYPTO_VECTOR: process.env.CRYPTO_VECTOR,
     CLUB: {
         ABBR: process.env.CLUB_ABBR,
         LOGO: process.env.CLUB_LOGO_URL,

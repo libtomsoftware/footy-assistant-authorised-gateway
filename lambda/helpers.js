@@ -1,6 +1,7 @@
 'use strict';
 const Base64 = require( 'js-base64' ).Base64;
 const crypto = require( 'crypto' );
+const CONFIG = require( './config' );
 
 module.exports = new class Helpers {
     getCurrentTimestamp() {
@@ -24,6 +25,24 @@ module.exports = new class Helpers {
             .createHmac( 'sha256', secret )
             .update( text )
             .digest( 'hex' );
+    }
+
+    encryptWithCipher( text ) {
+        const cipher = crypto.createCipheriv( 'aes-256-cbc', Buffer.from( CONFIG.CRYPTO_KEY, 'hex' ), CONFIG.CRYPTO_VECTOR );
+        let encrypted = cipher.update( text, 'utf8', 'hex' );
+
+        encrypted += cipher.final( 'hex' );
+
+        return encrypted;
+    }
+
+    decryptWithDecipher( encrypted ) {
+        const decipher = crypto.createDecipheriv( 'aes-256-cbc', Buffer.from( CONFIG.CRYPTO_KEY, 'hex' ), CONFIG.CRYPTO_VECTOR );
+        let decrypted = decipher.update( encrypted, 'hex', 'utf8' );
+
+        decrypted += decipher.final('utf8');
+
+        return decrypted;
     }
 
     extractIp( request ) {

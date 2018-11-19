@@ -9,7 +9,7 @@ const allowedOrigins = [
 function addHeaders( response, origin ) {
     response.headers = {
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+        'Access-Control-Allow-Headers': 'Content-Type,Authorization,x-footy-token',
         'Access-Control-Allow-Credentials': 'true'
     };
 

@@ -71,7 +71,7 @@ function sendConfirmationEmail( account, passwordDecoded ) {
     });
 }
 
-module.exports = function update( origin, body, callback ) {
+module.exports = function update( origin, useragent, body, callback ) {
 
     body.id = decodeURIComponent( body.id );
 
